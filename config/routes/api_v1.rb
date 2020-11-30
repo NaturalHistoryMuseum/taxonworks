@@ -8,6 +8,9 @@ namespace :api, defaults: {format: :json} do
     get :ping, controller: 'ping'
     get :pingz, controller: 'ping'
 
+    get :rpc, controller: 'rpc'
+    post :rpc, controller: 'rpc'
+
     # authenticated by user_token
     defaults authenticate_user: true do
       get '/user_authenticated', to: 'base#index'
@@ -43,5 +46,3 @@ namespace :api, defaults: {format: :json} do
     match '/:path', to: 'base#not_found', via: :all
   end
 end
-
-
